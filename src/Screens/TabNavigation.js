@@ -20,7 +20,7 @@ const TabNavigation = () => {
         } else if (route.name === 'Products') {
           iconName = <FontAwesome name="product-hunt" size={24} color={focused?"tomato":"black"}  /> ;
         } else if (route.name === 'Cart') {
-          iconName = <AntDesign name="shoppingcart" color={focused?"tomato":"black"}  />;
+          iconName = <AntDesign name="shoppingcart" color={focused?"tomato":"black"}   size={24} />;
         }
   
         return iconName ;
@@ -34,15 +34,24 @@ const TabNavigation = () => {
       component={Home} 
       options={({ navigation }) => ({
         headerShown: true,
-        title: 'HANI GOLDS',
+        headerTitle:"HANI GOLDS",
+        headerTitleStyle:{
+          color:"blue",
+          fontWeight:"bold",
+          marginHorizontal:20
+        },
+        title: 'Home',
         headerLeft: () => (
           <AntDesign
             name="menuunfold"
             size={24}
             color="tomato"
             onPress={() => navigation.toggleDrawer()} // Toggle the drawer menu
-            style={{ marginLeft: 5,fontWeight:"bold" }}
+            style={{ marginLeft: 20,fontWeight:"bold" }}
           />
+        ),
+        headerRight: () => (
+         <Text>good</Text>
         ),
       })} 
     />
@@ -53,9 +62,7 @@ const TabNavigation = () => {
       options={{
         headerShown: true,
         title: 'Our Products',
-        headerLeft: ()=>{
-          return null
-        }, // No icon on this screen
+        // No icon on this screen
       }}
     />
     
@@ -63,8 +70,16 @@ const TabNavigation = () => {
       name="Cart" 
       component={Cart} 
       options={({ navigation }) => ({
-        headerShown: navigation.getState().routes[navigation.getState().index].name === 'Cart',
-        title: navigation.getState().routes[navigation.getState().index].name === 'Cart' ? 'Your Cart' : 'Welcome',
+        headerShown: true,
+        headerTitle:"YOUR CART",
+        headerTitleStyle:{
+          color:"blue",
+          fontWeight:"bold",
+         
+        },
+        title: 'Cart',
+        
+     
       })} 
     />
   </Tab.Navigator>

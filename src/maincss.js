@@ -2,22 +2,41 @@ import { StyleSheet } from "react-native";
 
 export const mainStyles = StyleSheet.create({
 container:{
-    height:2330,
-    flex:1,
-    backgroundColor:"red",
-    borderWidth:49,
-    borderColor:"red"
-
+    backgroundColor:"white",
+   
+  
+   
 },
-flex:{
+bgWhite:{
+    backgroundColor:"white",
+    
+},
+flexCenter:{
+    flex:1,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    height:'100%',
+    
+},
+flexRow:{
+    flexDirection:"row",
+   
+   
+},
+gap:{
+    gap:50
+},
+width100:{
+    width:"100%"
+},
+width90:{
+    width:"90%"
 },
 flexWrap:{
 flexWrap:"wrap"
 },
 paddingH:{
-    paddingHorizontal:23
+    paddingHorizontal:25
 },
 paddingV:{
     paddingVertical:23
@@ -27,5 +46,25 @@ marginH:{
 },
 marginV:{
     marginVertical:3
+},
+imgWidth:{
+width:100,
+height:100,
+resizeMode:"covers"
+},
+imgIconW:{
+width:30,
+height:30,
+resizeMode:"covers"
+},
+border:{
+    borderWidth:2,
+    borderColor:"black"
+},
+flexSpace:{
+    justifyContent:"space-between" ,
+    alignItems:"center"
+},padding:{
+    padding:12
 }
  })

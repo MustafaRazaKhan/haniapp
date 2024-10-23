@@ -1,11 +1,11 @@
-import { Text, View } from 'react-native'
+import { Text, View , TouchableOpacity} from 'react-native'
 import React from 'react'
 
 const Button = () => {
   return (
-    <View>
-      <Text>Button</Text>
-    </View>
+   <TouchableOpacity>
+    <Text style={{color:"white",fontWeight:"bold"}}>REGISTER NOW</Text>
+   </TouchableOpacity>
   )
 }
 
