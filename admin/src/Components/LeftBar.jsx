@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDashboard } from "../Context/Dashboard";
 import { BiSolidCategory } from "react-icons/bi";
-import { MdDashboardCustomize } from "react-icons/md";
+import { MdDashboardCustomize,MdOutlinePlaylistAdd  } from "react-icons/md";
 import { IoBagAddSharp } from "react-icons/io5";
 import { FaList, FaCartArrowDown } from "react-icons/fa";
 import { FaProductHunt } from "react-icons/fa6";
@@ -55,7 +55,7 @@ const LeftBar = () => {
       <div
         className={
           type == "dashboard"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("dashboard")}
@@ -70,7 +70,7 @@ const LeftBar = () => {
       <div
         className={
           type == "newcat"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("newcat")}
@@ -81,18 +81,18 @@ const LeftBar = () => {
       <div
         className={
           type == "catlist"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("catlist")}
       >
-        <SideItem name="Category List" link="catlist" icon={<FaList />} />
+        <SideItem name="Category List" link="catlist" icon={<MdOutlinePlaylistAdd  />} />
       </div>
       {/* new product */}
       <div
         className={
           type == "newproduct"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("newproduct")}
@@ -107,7 +107,7 @@ const LeftBar = () => {
       <div
         className={
           type == "productslist"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("productslist")}
@@ -123,7 +123,7 @@ const LeftBar = () => {
       <div
         className={
           type == "orderlist"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("orderlist")}
@@ -137,7 +137,7 @@ const LeftBar = () => {
       <div
         className={
           type == "userlist"
-            ? "bg-black text-white mb-2"
+            ? "bg-black text-white mb-2 rounded-sm"
             : "bg-white text-black mb-2"
         }
         onClick={() => handleClick("userlist")}

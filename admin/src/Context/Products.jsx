@@ -7,7 +7,6 @@ const initialState = {
   allProduct: [],
   isError: false,
   msg: "",
-  singleProduct: {},
   category: "",
   subCategory: "",
   designName: "",
@@ -16,6 +15,7 @@ const initialState = {
   grossWeight: "",
   photoPaths: null, // Change to store the file object, not the string
   price: "",
+  product:{}
 };
 
 const ProductProvider = ({ children }) => {
@@ -56,7 +56,7 @@ const ProductProvider = ({ children }) => {
       payload: { name, value: file },
     });
   };
-  // Handle form submission to upload product details along with the file
+  //  todo Handle form submission to upload product details along with the file
   const handleProduct = async (e) => {
     e.preventDefault();
     // Create FormData to include both product details and the image file
@@ -106,7 +106,7 @@ const ProductProvider = ({ children }) => {
         }
       );
       const data = await response.json();
-      console.log(data)
+     
       if(data.success){
         dispatch({
           type:"GET_ALL_PRODUCTS",
@@ -123,6 +123,32 @@ const ProductProvider = ({ children }) => {
   useEffect(()=>{
 getAllProducts()
   },[])
+  const getSingleProduct = async(id) => {
+    // Fetch product logic here, e.g., making an API call
+    try {
+      //  !get both product data and the image in a single request
+      const response = await fetch(
+        `http://localhost:8080/api/product/product/${id}`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+      console.log(data)
+      if(data.success){
+        dispatch({
+          type:"GET_PRODUCT",
+          payload:{
+            product:data?.product
+          }
+       
+        })
+      } 
+    } catch (error) {
+      console.error("An error occurred", error);
+    }
+    // ...
+  };
 
   return (
     <Product.Provider
@@ -133,6 +159,7 @@ getAllProducts()
         handleProduct,
         handleProductChange,
         handleFileChange,
+        getSingleProduct
       }}
     >
       {children}

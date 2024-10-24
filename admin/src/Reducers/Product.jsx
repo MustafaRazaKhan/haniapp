@@ -23,10 +23,14 @@ const reducer = (state, action) => {
         [action.payload.name]: action.payload.value,
       };
     case "GET_ALL_PRODUCTS":
-      console.log(action.payload)
       return {
         ...state,
         allProduct: action.payload.products,
+      };
+    case "GET_PRODUCT":
+      return {
+        ...state,
+        product: action.payload.product,
       };
     default:
       return {
