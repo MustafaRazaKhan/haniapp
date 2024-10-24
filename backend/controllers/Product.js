@@ -141,19 +141,12 @@ const singleProductController = async (req, res) => {
     console.log(id);
 
     // ! Group products by subcategory and count the number of products in each subcategory
-    const singleProduct = await Product.findOne({
+    const product = await Product.findOne({
       _id: id,
     });
-
-    // if (!singleProduct.length) {
-    //   return res
-    //     .status(404)
-    //     .json({ success: false, msg: "No products found for this category" });
-    // }
-
     res.status(200).json({
       success: true,
-      singleProduct, // Return the grouped products with the sum of each subcategory
+      product, // Return the grouped products with the sum of each subcategory
     });
   } catch (error) {
     console.error("Error fetching products:", error);

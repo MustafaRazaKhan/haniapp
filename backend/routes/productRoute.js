@@ -14,6 +14,6 @@ router.post("/newproduct", upload, addProductController); // todo Using the same
 router.get("/allproduct", productsController); // ? Using the same endpoint for upload and creation
 router.get("/filterproduct/:category", filterController); // ! Using the same endpoint for upload and creation
 router.get("/:subcategory", filterSubController); // todo Using the same endpoint for upload and creation
-router.get("/singleproduct/:id", singleProductController); // ? Using the same endpoint for upload and creation
+router.get("/product/:id", singleProductController); // ? Using the same endpoint for upload and creation
 
 module.exports = router;
