@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "hanigold",
+    "slug": "hanigold",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "y.a.k",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.jpeg",
+        "backgroundColor": "#c6e5e4"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "whatsapp",
+              "host": "send"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6cc28704-97e9-43b7-83d6-a288c1c7d840"
+      }
+    }
+  }
+}

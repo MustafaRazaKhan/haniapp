@@ -1,0 +1,42 @@
+import { StyleSheet, Text, View, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+
+const Bgiconsec = () => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch('https://hanibackendapp.onrender.com/api/photo/photos');
+        const data = await response.json();
+
+        if (data.success) {
+          setImages(data.allPhotos); // Set the fetched images
+        } else {
+          console.error(data.msg);
+        }
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <View>
+      {images.length > 0 && (
+        <Image
+          source={{
+            uri: `data:${images[images.length - 1].contentType};base64,${images[images.length - 1].data}`
+          }}
+          style={{ width: 380, height: 300 }}
+        />
+      )}
+    </View>
+  );
+};
+
+export default Bgiconsec;
+
+const styles = StyleSheet.create({});
